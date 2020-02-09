@@ -8,10 +8,10 @@ openstack: Openstack
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.openstack](https://galaxy.ansible.com/devops-toolbox.openstack)
+[https://galaxy.ansible.com/devopstoolbox.openstack](https://galaxy.ansible.com/devopstoolbox.openstack)
 
 ```bash
-ansible-galaxy install devops-toolbox.openstack
+ansible-galaxy install devopstoolbox.openstack
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: openstack is configured
       import_role:
-        name: devops-toolbox.openstack
+        name: devopstoolbox.openstack
       vars:
         openstack_packages_state: present
         openstack_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
