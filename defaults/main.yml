@@ -1,0 +1,19 @@
+---
+# defaults file for openstack
+
+openstack_packages_state: present
+openstack_remove_packages: true
+openstack_enable_service: true
+openstack_enable_selinux: true
+openstack_copy_templates: true
+openstack_firewall_configure: true
+openstack_firewall_rules:
+  - service: ssh
+  - port: 3389
+openstack_users:
+  - user: devops
+    group: docker
+openstack_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true

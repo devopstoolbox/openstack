@@ -1,0 +1,11 @@
+---
+# Configure openstack
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ openstack_services_enable }}"
+  when: openstack_enable_service

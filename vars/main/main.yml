@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+openstack_repos_create: "{{ _openstack_repos_create['all']
+  | union ( _openstack_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+openstack_repos_download: "{{ _openstack_repos_download['all']
+  | union ( _openstack_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+openstack_templates_copy: "{{ _openstack_templates_copy['all']
+  | union ( _openstack_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+openstack_services_enable: "{{ _openstack_services_enable['all']
+  | union ( _openstack_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+openstack_selinux_enable: "{{ _openstack_selinux_enable['all']
+  | union ( _openstack_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+openstack_packages_remove: "{{ _openstack_packages_remove['all']
+  | union ( _openstack_packages_remove[my_os]
+  | default([]) ) }}"
+openstack_packages_repos: "{{ _openstack_packages_repos['all']
+  | union ( _openstack_packages_repos[my_os]
+  | default([]) ) }}"
+openstack_packages_prereq: "{{ _openstack_packages_prereq['all']
+  | union ( _openstack_packages_prereq[my_os]
+  | default([]) ) }}"
+openstack_packages_install: "{{ _openstack_packages_install['all']
+  | union ( _openstack_packages_install[my_os]
+  | default([]) ) }}"

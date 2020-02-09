@@ -1,0 +1,10 @@
+---
+# Template configuration files for openstack
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ openstack_templates_copy }}"
+  when: openstack_copy_templates
